@@ -43,7 +43,7 @@ namespace Redis.WebJobs.Extensions
                 throw new ArgumentNullException("redisConfig");
             }
 
-            config.RegisterExtensionConfigProvider(new RedisExtensionConfig(redisConfig));
+            config.RegisterExtensionConfigProvider(new RedisExtensionConfig(config, redisConfig));
         }
     }
 }

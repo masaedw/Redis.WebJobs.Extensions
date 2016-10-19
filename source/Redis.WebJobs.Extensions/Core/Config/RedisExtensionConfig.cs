@@ -12,14 +12,20 @@ namespace Redis.WebJobs.Extensions.Config
     internal class RedisExtensionConfig : IExtensionConfigProvider
     {
         private readonly RedisConfiguration _redisConfig;
+        private readonly INameResolver _nameResolver;
 
-        public RedisExtensionConfig(RedisConfiguration redisConfig)
+        public RedisExtensionConfig(JobHostConfiguration config, RedisConfiguration redisConfig)
         {
+            if (config == null)
+            {
+                throw new ArgumentNullException("config");
+            }
             if (redisConfig == null)
             {
                 throw new ArgumentNullException("redisConfig");
             }
 
+            _nameResolver = config.NameResolver;
             _redisConfig = redisConfig;
         }
 
