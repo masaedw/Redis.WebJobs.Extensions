@@ -1,9 +1,6 @@
 ﻿using System;
 using Microsoft.Azure.WebJobs;
-using Microsoft.Azure.WebJobs.Host;
-using Microsoft.Azure.WebJobs.Host.Bindings;
 using Microsoft.Azure.WebJobs.Host.Config;
-using Microsoft.Azure.WebJobs.Host.Triggers;
 using Redis.WebJobs.Extensions.Bindings;
 using Redis.WebJobs.Extensions.Triggers;
 

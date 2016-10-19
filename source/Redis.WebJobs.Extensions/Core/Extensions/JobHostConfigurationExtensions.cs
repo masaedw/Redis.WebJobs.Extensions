@@ -1,7 +1,5 @@
 ﻿using System;
 using Microsoft.Azure.WebJobs;
-using Microsoft.Azure.WebJobs.Host;
-using Microsoft.Azure.WebJobs.Host.Config;
 using Redis.WebJobs.Extensions.Config;
 
 namespace Redis.WebJobs.Extensions
