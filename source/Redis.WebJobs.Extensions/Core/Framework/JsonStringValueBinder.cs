@@ -26,7 +26,7 @@ namespace Redis.WebJobs.Extensions.Framework
             get { return typeof(TInput); }
         }
 
-        public abstract object GetValue();
+        public abstract Task<object> GetValueAsync();
 
         /// <inheritdoc/>
         public abstract string ToInvokeString();

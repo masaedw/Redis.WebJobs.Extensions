@@ -15,9 +15,9 @@ namespace Redis.WebJobs.Extensions.Bindings
             _entity = entity;
         }
 
-        public override object GetValue()
+        public override async Task<object> GetValueAsync()
         {
-            string value = _entity.GetAsync().Result;
+            string value = await _entity.GetAsync();
 
             if (value == null)
             {
