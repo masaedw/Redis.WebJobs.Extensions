@@ -25,7 +25,7 @@ namespace Redis.WebJobs.Extensions.Listeners
             var connection = RedisClient.CreateConnectionFromConnectionString(_config.ConnectionString);
             _subscriber = connection.GetSubscriber();
 
-            await _subscriber.SubscribeAsync(_channel, async (rc, m) => await processMessageAsync(m), CommandFlags.None);
+            await _subscriber.SubscribeAsync(_channel, (rc, m) => processMessageAsync(m).GetAwaiter().GetResult(), CommandFlags.None);
 
             _trace.Verbose(string.Format("Subscribed to {0} channel", _channel));
         }
