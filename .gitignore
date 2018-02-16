@@ -8,6 +8,7 @@ connections.config
 *.suo
 *.user
 *.sln.docstates
+.vs
 
 # Build results
 
